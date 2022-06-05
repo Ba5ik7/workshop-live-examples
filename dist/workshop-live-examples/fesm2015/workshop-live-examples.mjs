@@ -19,22 +19,10 @@ class WorkshopLiveExamplesComponent {
     }
 }
 WorkshopLiveExamplesComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: WorkshopLiveExamplesComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-WorkshopLiveExamplesComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.11", type: WorkshopLiveExamplesComponent, selector: "lib-workshop-live-examples", ngImport: i0, template: `
-    <p>
-      *****NPM MODULES workshop-live-examples works! Kelly
-    </p>
-  `, isInline: true });
+WorkshopLiveExamplesComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.11", type: WorkshopLiveExamplesComponent, selector: "tmd-workshop-live-examples", ngImport: i0, template: "<p>\n  *****NPM MODULES workshop-live-examples works! Kelly\n</p>", styles: [""] });
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: WorkshopLiveExamplesComponent, decorators: [{
             type: Component,
-            args: [{
-                    selector: 'lib-workshop-live-examples',
-                    template: `
-    <p>
-      *****NPM MODULES workshop-live-examples works! Kelly
-    </p>
-  `,
-                    styles: []
-                }]
+            args: [{ selector: 'tmd-workshop-live-examples', template: "<p>\n  *****NPM MODULES workshop-live-examples works! Kelly\n</p>", styles: [""] }]
         }], ctorParameters: function () { return []; } });
 
 class WorkshopLiveExamplesModule {
@@ -54,6 +42,26 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImpo
                     ]
                 }]
         }] });
+
+const EXAMPLE_COMPONENTS = {
+    "workshop-live-examples": {
+        "packagePath": "",
+        "title": "This is a Test Example",
+        "componentName": "WorkshopLiveExamplesComponent",
+        "files": [
+            "workshop-live-examples.component.ts",
+            "workshop-live-examples.component.html",
+            "workshop-live-examples.component.scss"
+        ],
+        "selector": "tmd-workshop-live-examples",
+        "additionalComponents": [],
+        "primaryFile": "workshop-live-examples.component.ts",
+        "module": {
+            "name": "WorkshopLiveExamplesModule",
+            "importSpecifier": ""
+        }
+    }
+};
 
 /*
  * Public API Surface of workshop-live-examples
