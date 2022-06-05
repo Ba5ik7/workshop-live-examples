@@ -2,7 +2,7 @@ export interface WorkshopExampleList {
 }
 
 
-const EXAMPLE_COMPONENTS = {
+export const EXAMPLE_COMPONENTS = {
   "workshop-live-examples": {
       "packagePath": "",
       "title": "This is a Test Example",

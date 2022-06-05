@@ -71,5 +71,5 @@ const EXAMPLE_COMPONENTS = {
  * Generated bundle index. Do not edit.
  */
 
-export { WorkshopLiveExamplesComponent, WorkshopLiveExamplesModule, WorkshopLiveExamplesService };
+export { EXAMPLE_COMPONENTS, WorkshopLiveExamplesComponent, WorkshopLiveExamplesModule, WorkshopLiveExamplesService };
 //# sourceMappingURL=workshop-live-examples.mjs.map
