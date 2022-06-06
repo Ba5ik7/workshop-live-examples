@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ParentChildDesignModule } from './parent-child-design/parent-child-design.module';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    ParentChildDesignModule
   ]
 })
 export class RouteReuseStrategyModule { }
