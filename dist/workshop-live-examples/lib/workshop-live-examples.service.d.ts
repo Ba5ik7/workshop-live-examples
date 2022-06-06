@@ -4,3 +4,4 @@ export declare class WorkshopLiveExamplesService {
     static ɵfac: i0.ɵɵFactoryDeclaration<WorkshopLiveExamplesService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<WorkshopLiveExamplesService>;
 }
+//# sourceMappingURL=workshop-live-examples.service.d.ts.map

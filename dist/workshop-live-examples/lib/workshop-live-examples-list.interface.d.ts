@@ -31,3 +31,4 @@ export interface NgModuleInfo {
 export declare const EXAMPLE_COMPONENTS: {
     [id: string]: LiveExample;
 };
+//# sourceMappingURL=workshop-live-examples-list.interface.d.ts.map
