@@ -21,7 +21,7 @@ const EXAMPLE_COMPONENTS = {
         "additionalComponents": [],
         "primaryFile": "solution-one.component.ts",
         "module": {
-            "name": "ParentChildDesignModule",
+            "name": "SolutionOneModule",
             "importSpecifier": "lib/route-reuse-strategy/parent-child-design"
         }
     },
@@ -38,7 +38,7 @@ const EXAMPLE_COMPONENTS = {
         "additionalComponents": [],
         "primaryFile": "solution-three.component.ts",
         "module": {
-            "name": "ParentChildDesignModule",
+            "name": "SolutionOneModule",
             "importSpecifier": "lib/route-reuse-strategy/parent-child-design"
         }
     },
@@ -55,7 +55,7 @@ const EXAMPLE_COMPONENTS = {
         "additionalComponents": [],
         "primaryFile": "solution-two.component.ts",
         "module": {
-            "name": "ParentChildDesignModule",
+            "name": "SolutionOneModule",
             "importSpecifier": "lib/route-reuse-strategy/parent-child-design"
         }
     }
@@ -89,16 +89,12 @@ class SolutionOneComponent {
     ngOnInit() {
     }
 }
-SolutionOneComponent.ɵfac = function SolutionOneComponent_Factory(t) { return new (t || SolutionOneComponent)(); };
-SolutionOneComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: SolutionOneComponent, selectors: [["lib-solution-one"]], decls: 2, vars: 0, template: function SolutionOneComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelementStart(0, "p");
-        i0.ɵɵtext(1, "solution-one works!");
-        i0.ɵɵelementEnd();
-    } }, styles: [""], changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SolutionOneComponent, [{
-        type: Component,
-        args: [{ selector: 'lib-solution-one', changeDetection: ChangeDetectionStrategy.OnPush, template: "<p>solution-one works!</p>\n", styles: [""] }]
-    }], function () { return []; }, null); })();
+SolutionOneComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionOneComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+SolutionOneComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.11", type: SolutionOneComponent, selector: "lib-solution-one", ngImport: i0, template: "<p>solution-one works!</p>\n", styles: [""], changeDetection: i0.ChangeDetectionStrategy.OnPush });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionOneComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'lib-solution-one', changeDetection: ChangeDetectionStrategy.OnPush, template: "<p>solution-one works!</p>\n", styles: [""] }]
+        }], ctorParameters: function () { return []; } });
 
 /**
  * @title Solution Two
@@ -108,16 +104,12 @@ class SolutionTwoComponent {
     ngOnInit() {
     }
 }
-SolutionTwoComponent.ɵfac = function SolutionTwoComponent_Factory(t) { return new (t || SolutionTwoComponent)(); };
-SolutionTwoComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: SolutionTwoComponent, selectors: [["lib-solution-two"]], decls: 2, vars: 0, template: function SolutionTwoComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelementStart(0, "p");
-        i0.ɵɵtext(1, "solution-two works!");
-        i0.ɵɵelementEnd();
-    } }, styles: [""], changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SolutionTwoComponent, [{
-        type: Component,
-        args: [{ selector: 'lib-solution-two', changeDetection: ChangeDetectionStrategy.OnPush, template: "<p>solution-two works!</p>\n", styles: [""] }]
-    }], function () { return []; }, null); })();
+SolutionTwoComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionTwoComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+SolutionTwoComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.11", type: SolutionTwoComponent, selector: "lib-solution-two", ngImport: i0, template: "<p>solution-two works!</p>\n", styles: [""], changeDetection: i0.ChangeDetectionStrategy.OnPush });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionTwoComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'lib-solution-two', changeDetection: ChangeDetectionStrategy.OnPush, template: "<p>solution-two works!</p>\n", styles: [""] }]
+        }], ctorParameters: function () { return []; } });
 
 /**
  * @title Solution Three
@@ -127,47 +119,78 @@ class SolutionThreeComponent {
     ngOnInit() {
     }
 }
-SolutionThreeComponent.ɵfac = function SolutionThreeComponent_Factory(t) { return new (t || SolutionThreeComponent)(); };
-SolutionThreeComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: SolutionThreeComponent, selectors: [["lib-solution-three"]], decls: 2, vars: 0, template: function SolutionThreeComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelementStart(0, "p");
-        i0.ɵɵtext(1, "solution-three works!");
-        i0.ɵɵelementEnd();
-    } }, styles: [""], changeDetection: 0 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SolutionThreeComponent, [{
-        type: Component,
-        args: [{ selector: 'lib-solution-three', changeDetection: ChangeDetectionStrategy.OnPush, template: "<p>solution-three works!</p>\n", styles: [""] }]
-    }], function () { return []; }, null); })();
+SolutionThreeComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionThreeComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+SolutionThreeComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "13.3.11", type: SolutionThreeComponent, selector: "lib-solution-three", ngImport: i0, template: "<p>solution-three works!</p>\n", styles: [""], changeDetection: i0.ChangeDetectionStrategy.OnPush });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionThreeComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'lib-solution-three', changeDetection: ChangeDetectionStrategy.OnPush, template: "<p>solution-three works!</p>\n", styles: [""] }]
+        }], ctorParameters: function () { return []; } });
 
-class ParentChildDesignModule {
+class SolutionOneModule {
 }
-ParentChildDesignModule.ɵfac = function ParentChildDesignModule_Factory(t) { return new (t || ParentChildDesignModule)(); };
-ParentChildDesignModule.ɵmod = /*@__PURE__*/ i0.ɵɵdefineNgModule({ type: ParentChildDesignModule });
-ParentChildDesignModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [[
+SolutionOneModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionOneModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+SolutionOneModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionOneModule, declarations: [SolutionOneComponent], imports: [CommonModule], exports: [SolutionOneComponent] });
+SolutionOneModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionOneModule, imports: [[
             CommonModule
         ]] });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ParentChildDesignModule, [{
-        type: NgModule,
-        args: [{
-                declarations: [
-                    SolutionOneComponent,
-                    SolutionTwoComponent,
-                    SolutionThreeComponent
-                ],
-                imports: [
-                    CommonModule
-                ],
-                exports: [
-                    SolutionOneComponent,
-                    SolutionTwoComponent,
-                    SolutionThreeComponent
-                ]
-            }]
-    }], null, null); })();
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(ParentChildDesignModule, { declarations: [SolutionOneComponent,
-        SolutionTwoComponent,
-        SolutionThreeComponent], imports: [CommonModule], exports: [SolutionOneComponent,
-        SolutionTwoComponent,
-        SolutionThreeComponent] }); })();
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionOneModule, decorators: [{
+            type: NgModule,
+            args: [{
+                    declarations: [
+                        SolutionOneComponent
+                    ],
+                    imports: [
+                        CommonModule
+                    ],
+                    exports: [
+                        SolutionOneComponent
+                    ]
+                }]
+        }] });
+
+class SolutionTwoModule {
+}
+SolutionTwoModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionTwoModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+SolutionTwoModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionTwoModule, declarations: [SolutionTwoComponent], imports: [CommonModule], exports: [SolutionTwoComponent] });
+SolutionTwoModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionTwoModule, imports: [[
+            CommonModule
+        ]] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionTwoModule, decorators: [{
+            type: NgModule,
+            args: [{
+                    declarations: [
+                        SolutionTwoComponent
+                    ],
+                    imports: [
+                        CommonModule
+                    ],
+                    exports: [
+                        SolutionTwoComponent
+                    ]
+                }]
+        }] });
+
+class SolutionThreeModule {
+}
+SolutionThreeModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionThreeModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
+SolutionThreeModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionThreeModule, declarations: [SolutionThreeComponent], imports: [CommonModule], exports: [SolutionThreeComponent] });
+SolutionThreeModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionThreeModule, imports: [[
+            CommonModule
+        ]] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "13.3.11", ngImport: i0, type: SolutionThreeModule, decorators: [{
+            type: NgModule,
+            args: [{
+                    declarations: [
+                        SolutionThreeComponent
+                    ],
+                    imports: [
+                        CommonModule
+                    ],
+                    exports: [
+                        SolutionThreeComponent
+                    ]
+                }]
+        }] });
 
 /*
  * Public API Surface of workshop-live-examples
@@ -177,5 +200,5 @@ ParentChildDesignModule.ɵinj = /*@__PURE__*/ i0.ɵɵdefineInjector({ imports: [
  * Generated bundle index. Do not edit.
  */
 
-export { EXAMPLE_COMPONENTS, ExampleData, ParentChildDesignModule, SolutionOneComponent, SolutionThreeComponent, SolutionTwoComponent };
+export { EXAMPLE_COMPONENTS, ExampleData, SolutionOneComponent, SolutionOneModule, SolutionThreeComponent, SolutionThreeModule, SolutionTwoComponent, SolutionTwoModule };
 //# sourceMappingURL=workshop-live-examples.mjs.map

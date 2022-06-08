@@ -9,4 +9,3 @@ export declare class SolutionThreeComponent implements OnInit {
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionThreeComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SolutionThreeComponent, "lib-solution-three", never, {}, {}, never, never>;
 }
-//# sourceMappingURL=solution-three.component.d.ts.map

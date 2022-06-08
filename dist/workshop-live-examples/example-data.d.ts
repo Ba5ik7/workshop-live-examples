@@ -15,4 +15,3 @@ export declare class ExampleData {
     componentNames: string[];
     constructor(example: string);
 }
-//# sourceMappingURL=example-data.d.ts.map

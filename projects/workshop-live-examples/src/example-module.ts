@@ -48,7 +48,7 @@ export const EXAMPLE_COMPONENTS: {[id: string]: LiveExample} = {
     "additionalComponents": [],
     "primaryFile": "solution-one.component.ts",
     "module": {
-      "name": "ParentChildDesignModule",
+      "name": "SolutionOneModule",
       "importSpecifier": "lib/route-reuse-strategy/parent-child-design"
     }
   },
@@ -65,7 +65,7 @@ export const EXAMPLE_COMPONENTS: {[id: string]: LiveExample} = {
     "additionalComponents": [],
     "primaryFile": "solution-three.component.ts",
     "module": {
-      "name": "ParentChildDesignModule",
+      "name": "SolutionOneModule",
       "importSpecifier": "lib/route-reuse-strategy/parent-child-design"
     }
   },
@@ -82,7 +82,7 @@ export const EXAMPLE_COMPONENTS: {[id: string]: LiveExample} = {
     "additionalComponents": [],
     "primaryFile": "solution-two.component.ts",
     "module": {
-      "name": "ParentChildDesignModule",
+      "name": "SolutionOneModule",
       "importSpecifier": "lib/route-reuse-strategy/parent-child-design"
     }
   }

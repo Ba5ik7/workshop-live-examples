@@ -9,4 +9,3 @@ export declare class SolutionOneComponent implements OnInit {
     static ɵfac: i0.ɵɵFactoryDeclaration<SolutionOneComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<SolutionOneComponent, "lib-solution-one", never, {}, {}, never, never>;
 }
-//# sourceMappingURL=solution-one.component.d.ts.map
