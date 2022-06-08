@@ -13,13 +13,13 @@
   "esm2020": "esm2020/workshop-live-examples.mjs",
   "fesm2020": "fesm2020/workshop-live-examples.mjs",
   "fesm2015": "fesm2015/workshop-live-examples.mjs",
-  "typings": "index.d.ts",
+  "typings": "workshop-live-examples.d.ts",
   "exports": {
     "./package.json": {
       "default": "./package.json"
     },
     ".": {
-      "types": "./index.d.ts",
+      "types": "./workshop-live-examples.d.ts",
       "esm2020": "./esm2020/workshop-live-examples.mjs",
       "es2020": "./fesm2020/workshop-live-examples.mjs",
       "es2015": "./fesm2015/workshop-live-examples.mjs",

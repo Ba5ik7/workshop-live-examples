@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve workshop-live-examples-tester",
-    "build": "ng build",
+    "build": "ng build workshop-live-examples --configuration development",
     "watch": "ng build workshop-live-examples --watch --configuration development",
     "test": "ng test"
   },
