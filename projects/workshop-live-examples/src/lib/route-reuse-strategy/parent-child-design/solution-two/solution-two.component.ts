@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
+/**
+ * @title Solution Two
+ */
 @Component({
   selector: 'lib-solution-two',
   templateUrl: './solution-two.component.html',

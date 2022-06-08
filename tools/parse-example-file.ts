@@ -16,8 +16,6 @@ interface ParsedMetadataResults {
 
 /** Parse the AST of the given source file and collect Angular component metadata. */
 export function parseExampleFile(fileName: string, content: string): ParsedMetadataResults {
-  console.log('content', content);
-  
   const sourceFile = ts.createSourceFile(fileName, content, ts.ScriptTarget.Latest, false);
   const metas: ParsedMetadata[] = [];
 
@@ -26,9 +24,7 @@ export function parseExampleFile(fileName: string, content: string): ParsedMetad
       const meta: any = {
         componentName: node.name.text,
       };
-      console.log('node.jsDoc', node);
       
-
       if (node.jsDoc && node.jsDoc.length) {        
         for (const doc of node.jsDoc) {
           if (doc.tags && doc.tags.length) {

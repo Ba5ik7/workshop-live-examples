@@ -4,7 +4,6 @@ exports.parseExampleFile = void 0;
 var ts = require("typescript");
 /** Parse the AST of the given source file and collect Angular component metadata. */
 function parseExampleFile(fileName, content) {
-    console.log('content', content);
     var sourceFile = ts.createSourceFile(fileName, content, ts.ScriptTarget.Latest, false);
     var metas = [];
     var visitNode = function (node) {
@@ -12,7 +11,6 @@ function parseExampleFile(fileName, content) {
             var meta = {
                 componentName: node.name.text
             };
-            console.log('node.jsDoc', node);
             if (node.jsDoc && node.jsDoc.length) {
                 for (var _i = 0, _a = node.jsDoc; _i < _a.length; _i++) {
                     var doc = _a[_i];

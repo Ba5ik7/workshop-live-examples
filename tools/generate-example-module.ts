@@ -85,28 +85,23 @@ function analyzeExamples(sourceFiles: string[], baseDir: string): AnalyzedExampl
     const relativePath = path.relative(baseDir, sourceFile).replace(/\\/g, '/');
     const importPath = relativePath.replace(/\.ts$/, '');
     const packagePath = path.dirname(relativePath);
-
-    const fileExtPat = /\.([0-9a-z]+)(?:[\?#]|$)/i;
-    const basename = path.basename(sourceFile);
-    const fileExt = (basename).match(fileExtPat);
     
-
     // Collect all individual example modules.
-    if (path.basename(sourceFile) === 'parent-child-design.module.ts') {
+    if (path.basename(sourceFile, path.extname(sourceFile)).endsWith('.module')) {
+      console.log('sourceFile', sourceFile);
       
-    exampleModules.push(
+      exampleModules.push(
       ...parseExampleModuleFile(sourceFile).map(name => ({
-        name,
-        importPath,
-        packagePath,
-      })),
+          name,
+          importPath,
+          packagePath,
+        }))
       );
     }
 
-    // Avoid parsing non-example files.
-    console.log(sourceFile, path.extname(sourceFile));
     
-    if (!path.basename(sourceFile, path.extname(sourceFile)).endsWith('-example')) {
+    // Avoid parsing non-example files.
+    if (!path.basename(sourceFile, path.extname(sourceFile)).endsWith('.component')) {
       continue;
     }
 
@@ -115,7 +110,7 @@ function analyzeExamples(sourceFiles: string[], baseDir: string): AnalyzedExampl
     
     if (primaryComponent) {
       // Generate a unique id for the component by converting the class name to dash-case.
-      const exampleId = convertToDashCase(primaryComponent.componentName.replace('Example', ''));
+      const exampleId = convertToDashCase(primaryComponent.componentName.replace('Component', ''));
       const example: ExampleMetadata = {
         sourcePath: relativePath,
         packagePath,
@@ -130,7 +125,7 @@ function analyzeExamples(sourceFiles: string[], baseDir: string): AnalyzedExampl
 
       // For consistency, we expect the example component selector to match
       // the id of the example.
-      const expectedSelector = `${exampleId}-example`;
+      const expectedSelector = `lib-${exampleId}`;
       if (primaryComponent.selector !== expectedSelector) {
         throw Error(
           `Example ${exampleId} uses selector: ${primaryComponent.selector}, ` +
@@ -218,8 +213,8 @@ function assertReferencedExampleFileExists(
  * file.
  */
 export function generateExampleModule(
-  sourceFiles: string[] = ALL_EXAMPLES,
-  outputFile: string = 'test.ts',
+  sourceFiles: string[],
+  outputFile: string = './projects/workshop-live-examples/src/example-module.ts',
   baseDir: string = path.dirname(outputFile),
 ) {
   const analysisData = analyzeExamples(sourceFiles, baseDir);
@@ -228,4 +223,23 @@ export function generateExampleModule(
   fs.writeFileSync(outputFile, generatedModuleFile);
 }
 
-generateExampleModule();
+const sourceFiles = [];
+function fromDir(startPath, filter) {
+  if (!fs.existsSync(startPath)) {
+      return;
+  }
+
+  var files = fs.readdirSync(startPath);
+  for (var i = 0; i < files.length; i++) {
+    var filename = path.join(startPath, files[i]);
+    var stat = fs.lstatSync(filename);
+    if (stat.isDirectory()) {
+      fromDir(filename, filter); //recurse
+    } else if (filename.endsWith(filter)) {
+      sourceFiles.push(filename);
+    };
+  };
+};
+
+fromDir('./projects/workshop-live-examples/src/lib', '.ts');
+generateExampleModule(sourceFiles);

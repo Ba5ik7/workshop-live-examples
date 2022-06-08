@@ -5,7 +5,6 @@ var fs = require("fs");
 var path = require("path");
 var parse_example_file_1 = require("./parse-example-file");
 var parse_example_module_file_1 = require("./parse-example-module-file");
-var config_1 = require("./config");
 /** Inlines the example module template with the specified parsed data. */
 function inlineExampleModuleTemplate(parsedData) {
     var exampleMetadata = parsedData.exampleMetadata;
@@ -51,11 +50,9 @@ function analyzeExamples(sourceFiles, baseDir) {
         var relativePath = path.relative(baseDir, sourceFile).replace(/\\/g, '/');
         var importPath = relativePath.replace(/\.ts$/, '');
         var packagePath = path.dirname(relativePath);
-        var fileExtPat = /\.([0-9a-z]+)(?:[\?#]|$)/i;
-        var basename = path.basename(sourceFile);
-        var fileExt = (basename).match(fileExtPat);
         // Collect all individual example modules.
-        if (path.basename(sourceFile) === 'parent-child-design.module.ts') {
+        if (path.basename(sourceFile, path.extname(sourceFile)).endsWith('.module')) {
+            console.log('sourceFile', sourceFile);
             exampleModules.push.apply(exampleModules, (0, parse_example_module_file_1.parseExampleModuleFile)(sourceFile).map(function (name) { return ({
                 name: name,
                 importPath: importPath,
@@ -63,15 +60,14 @@ function analyzeExamples(sourceFiles, baseDir) {
             }); }));
         }
         // Avoid parsing non-example files.
-        console.log(sourceFile, path.extname(sourceFile));
-        if (!path.basename(sourceFile, path.extname(sourceFile)).endsWith('-example')) {
+        if (!path.basename(sourceFile, path.extname(sourceFile)).endsWith('.component')) {
             return "continue";
         }
         var sourceContent = fs.readFileSync(sourceFile, 'utf-8');
         var _c = (0, parse_example_file_1.parseExampleFile)(sourceFile, sourceContent), primaryComponent = _c.primaryComponent, secondaryComponents = _c.secondaryComponents;
         if (primaryComponent) {
             // Generate a unique id for the component by converting the class name to dash-case.
-            var exampleId = convertToDashCase(primaryComponent.componentName.replace('Example', ''));
+            var exampleId = convertToDashCase(primaryComponent.componentName.replace('Component', ''));
             var example = {
                 sourcePath: relativePath,
                 packagePath: packagePath,
@@ -85,7 +81,7 @@ function analyzeExamples(sourceFiles, baseDir) {
             };
             // For consistency, we expect the example component selector to match
             // the id of the example.
-            var expectedSelector = "".concat(exampleId, "-example");
+            var expectedSelector = "lib-".concat(exampleId);
             if (primaryComponent.selector !== expectedSelector) {
                 throw Error("Example ".concat(exampleId, " uses selector: ").concat(primaryComponent.selector, ", ") +
                     "but expected: ".concat(expectedSelector));
@@ -158,12 +154,32 @@ function assertReferencedExampleFileExists(baseDir, examplePackagePath, relative
  * file.
  */
 function generateExampleModule(sourceFiles, outputFile, baseDir) {
-    if (sourceFiles === void 0) { sourceFiles = config_1.ALL_EXAMPLES; }
-    if (outputFile === void 0) { outputFile = 'test.ts'; }
+    if (outputFile === void 0) { outputFile = './projects/workshop-live-examples/src/example-module.ts'; }
     if (baseDir === void 0) { baseDir = path.dirname(outputFile); }
     var analysisData = analyzeExamples(sourceFiles, baseDir);
     var generatedModuleFile = inlineExampleModuleTemplate(analysisData);
     fs.writeFileSync(outputFile, generatedModuleFile);
 }
 exports.generateExampleModule = generateExampleModule;
-generateExampleModule();
+var sourceFiles = [];
+function fromDir(startPath, filter) {
+    if (!fs.existsSync(startPath)) {
+        return;
+    }
+    var files = fs.readdirSync(startPath);
+    for (var i = 0; i < files.length; i++) {
+        var filename = path.join(startPath, files[i]);
+        var stat = fs.lstatSync(filename);
+        if (stat.isDirectory()) {
+            fromDir(filename, filter); //recurse
+        }
+        else if (filename.endsWith(filter)) {
+            sourceFiles.push(filename);
+        }
+        ;
+    }
+    ;
+}
+;
+fromDir('./projects/workshop-live-examples/src/lib', '.ts');
+generateExampleModule(sourceFiles);
